@@ -6,6 +6,7 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    LogoSvg: typeof import('./src/components/LogoSvg.vue')['default']
     NaiveButton: typeof import('./src/components/NaiveButton.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
@@ -17,6 +18,7 @@ declare module '@vue/runtime-core' {
     NLayoutFooter: typeof import('naive-ui')['NLayoutFooter']
     NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
     NLayoutSider: typeof import('naive-ui')['NLayoutSider']
+    NSpace: typeof import('naive-ui')['NSpace']
   }
 }
 
