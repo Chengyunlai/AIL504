@@ -102,10 +102,10 @@ export default {
   data(){
     return{
       screenHeight:{
-        height:document.documentElement.clientHeight<800?document.documentElement.clientHeight*0.9+'px':document.documentElement.clientHeight*0.95+'px'
+        height:document.documentElement.clientHeight<800?document.documentElement.clientHeight*0.9+'px':document.documentElement.clientHeight*0.94+'px'
       },
       headerHeight:{
-        height:document.documentElement.clientHeight<800?document.documentElement.clientHeight*0.1+'px':document.documentElement.clientHeight*0.05+'px'
+        height:document.documentElement.clientHeight<800?document.documentElement.clientHeight*0.1+'px':document.documentElement.clientHeight*0.06+'px',
       }
     }
   }
