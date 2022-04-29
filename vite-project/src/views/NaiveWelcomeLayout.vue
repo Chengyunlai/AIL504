@@ -41,7 +41,40 @@
         </n-gi>
         <!--登录注册-->
         <n-gi style="display: flex;justify-content: space-evenly;align-items: center" span="3">
-            <n-button size="large">注册</n-button>
+            <n-button size="large" @click="login = true">注册</n-button>
+            <!--注册 模态框-->
+          <n-modal
+              v-model:show="login"
+              class="custom-card"
+              :mask-closable="false"
+              preset="card"
+              :style="bodyStyle"
+              title="注册"
+              size="huge"
+              :bordered="false"
+              :segmented="segmented"
+          >
+
+            <!--<template #header>-->
+            <!--  <LoginOutlined style="width: 32px;"></LoginOutlined>-->
+            <!--</template>-->
+            <n-space vertical size="large">
+              <n-input v-model:value="value" type="text" placeholder="起一个酷酷的用户名" />
+              <n-input
+                  type="password"
+                  show-password-on="mousedown"
+                  placeholder="密码"
+                  :maxlength="8"
+              />
+            </n-space>
+
+            <template #footer>
+              <n-space>
+                <n-button>提交</n-button>
+                <n-button>取消</n-button>
+              </n-space>
+            </template>
+          </n-modal>
             <n-button type="success" size="large">登录</n-button>
         </n-gi>
 
@@ -86,10 +119,13 @@
   </n-layout>
 </template>
 
-<script>
+<script lang="ts">
 import logoSvg from "../components/LogoSvg.vue";
-// import {ref, onMounted} from "vue";
+import {ref} from "vue";
+// 图标
 import {YuqueOutlined} from "@vicons/antd"
+import {LoginOutlined} from "@vicons/antd"
+
 import { Icon } from '@vicons/utils'
 
 export default {
@@ -97,8 +133,22 @@ export default {
   components: {
     logoSvg,
     YuqueOutlined,
-    Icon
+    Icon,
+    LoginOutlined
   },
+  setup () {
+    return {
+      bodyStyle: {
+        width: '600px'
+      },
+      segmented: {
+        content: 'soft',
+        footer: 'soft'
+      } as const,
+      login: ref(false)
+    }
+  }
+  ,
   data(){
     return{
       screenHeight:{
@@ -108,6 +158,9 @@ export default {
         height:document.documentElement.clientHeight<800?document.documentElement.clientHeight*0.1+'px':document.documentElement.clientHeight*0.06+'px',
       }
     }
+  },
+  methods:{
+
   }
 }
 

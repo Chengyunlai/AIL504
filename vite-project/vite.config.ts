@@ -8,5 +8,8 @@ export default defineConfig({
   plugins: [vue(),
     Components({
       resolvers: [NaiveUiResolver()]
-    })]
+    })],
+  server:{
+    host:'0.0.0.0'
+  }
 })
