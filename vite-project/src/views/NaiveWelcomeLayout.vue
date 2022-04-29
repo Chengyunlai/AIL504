@@ -1,11 +1,9 @@
 <template>
-  <n-layout>
-    <n-layout-header bordered>
-      <n-grid style="height:60px" x-gap="12" :cols="4">
-        <n-gi class="flex-right">
-          <!--logo-->
-          <!--<LogoSvg></LogoSvg>-->
-
+  <n-layout class="font-transparent">
+    <n-layout-header :style="headerHeight" bordered>
+      <n-grid cols="15" style="height: 100%">
+        <!--logo-->
+        <n-gi style="display: flex;justify-content: center;align-items: center" span="3">
           <n-image
               width="40"
               src="img/logo-img.png"
@@ -13,7 +11,8 @@
           />
           <p class="header-font">AIL504</p>
         </n-gi>
-        <n-gi class="flex-right">
+        <!--项目-->
+        <n-gi class="flex-right"  span="6">
           <!--<p>智慧消防</p>-->
           <n-space justify="space-around" size="large">
             <n-button
@@ -40,35 +39,48 @@
           </n-space>
 
         </n-gi>
-        <n-gi>
-          <div class="light-green">
-            <!--<p>登录</p>-->
-            <!--<p>注册</p>-->
-          </div>
+        <!--登录注册-->
+        <n-gi style="display: flex;justify-content: space-evenly;align-items: center" span="3">
+            <n-button size="large">注册</n-button>
+            <n-button type="success" size="large">登录</n-button>
         </n-gi>
-        <n-gi>
-          <div class="green">
-            <!--这里放GitHub/语雀的链接-->
-          </div>
+
+        <n-gi  class="flex-right">
+
+          <a href="https://worker.yuque.com/groups/cf4sta/join?token=kLnkxQZAXF0X8uCM# (成员)">
+            <YuqueOutlined color="#28c772" style="width: 42px"></YuqueOutlined>
+          </a>
+
+
         </n-gi>
+      </n-grid>
+      <n-grid>
+
       </n-grid>
     </n-layout-header>
 
-    <n-layout-content content-style="display: flex;align-items:center;justify-content: center;flex-direction:column">
+    <n-layout-content :content-style="screenHeight">
       <!--<h1>AIL504实验小组</h1>-->
-      <LogoSvg></LogoSvg>
-      <div>
-        <h1 style="font-size: 5em">AIL504</h1>
-      </div>
-      <div>
-        <p>活着就是为了改变世界，难道还有其他原因吗?</p>
+      <div style="height: 100%;display: flex;flex-direction: column;justify-content: center">
+        <div style="display: flex;justify-content: center;">
+          <LogoSvg></LogoSvg>
+        </div>
+        <div>
+          <h1 style="font-size: 5em;">AIL504</h1>
+        </div>
+        <div>
+          <p>释放你的创造力</p>
+        </div>
       </div>
 
     </n-layout-content>
 
-    <n-layout-footer bordered style="display: flex;justify-content: center;align-items: center">
+    <n-layout-footer bordered style="display: flex;flex-direction: column;justify-content: center;align-items: center;padding: 10px">
       <div>
-        <p >Location:浙江科技学院实验大楼510</p>
+        <p >坐标: 浙江科技学院实验大楼510</p>
+      </div>
+      <div style="margin-top: 5px">
+        <p >创作者: <span style="color:#96e75f;font-weight: bold">程云来</span></p>
       </div>
     </n-layout-footer>
   </n-layout>
@@ -76,18 +88,26 @@
 
 <script>
 import logoSvg from "../components/LogoSvg.vue";
+// import {ref, onMounted} from "vue";
+import {YuqueOutlined} from "@vicons/antd"
+import { Icon } from '@vicons/utils'
 
 export default {
   name: "NaiveLayout",
   components: {
-    logoSvg
+    logoSvg,
+    YuqueOutlined,
+    Icon
   },
-  created() {
-    let height;
-    height = screen.height * 0.8;
-  //  改变n-layout-content的高度
-    console.log(height)
-
+  data(){
+    return{
+      screenHeight:{
+        height:document.documentElement.clientHeight<800?document.documentElement.clientHeight*0.9+'px':document.documentElement.clientHeight*0.95+'px'
+      },
+      headerHeight:{
+        height:document.documentElement.clientHeight<800?document.documentElement.clientHeight*0.1+'px':document.documentElement.clientHeight*0.05+'px'
+      }
+    }
   }
 }
 
@@ -106,6 +126,15 @@ export default {
   font-weight: bolder;
   font-size: 1.5em;
   margin-left: 10px
+}
+
+.welcome-content{
+  text-align: center;
+}
+
+/*光标隐藏*/
+.font-transparent{
+  caret-color:transparent;
 }
 
 </style>

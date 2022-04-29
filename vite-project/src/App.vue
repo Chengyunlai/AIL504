@@ -17,6 +17,8 @@ import NaiveLayout from './views/NaiveWelcomeLayout.vue';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  /*min-height: 100vh;*/
+  /*height: 100%;*/
   /*color: #2c3e50;*/
   /*margin-top: 60px;*/
 }
