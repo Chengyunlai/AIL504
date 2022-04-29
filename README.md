@@ -16,3 +16,7 @@ Code&amp;Love By Chengyunlai
 `npm i`
 
 `npm run serve`
+## 未来
+这将是一个功能完整的Vue项目，项目完全开源
+关于Fork，等业务确认后再考虑吧
+大家可以Clone到本地自己基于这个再开发
