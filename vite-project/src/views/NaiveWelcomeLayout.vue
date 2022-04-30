@@ -147,21 +147,37 @@ export default {
       } as const,
       login: ref(false)
     }
-  }
-  ,
+  },
   data(){
     return{
       screenHeight:{
-        height:document.documentElement.clientHeight<800?document.documentElement.clientHeight*0.9+'px':document.documentElement.clientHeight*0.94+'px'
+        height:this.changeScreenHeight()
       },
       headerHeight:{
-        height:document.documentElement.clientHeight<800?document.documentElement.clientHeight*0.1+'px':document.documentElement.clientHeight*0.06+'px',
+        height:this.changeHeaderHeight()
+      }
+    }
+  },
+  mounted() {
+    let that = this
+    window.onresize = function (){
+      // console.log(that.headerHeight)
+      that.screenHeight = {
+        height:that.changeScreenHeight()
+      }
+      that.headerHeight = {
+        height:that.changeHeaderHeight()
       }
     }
   },
   methods:{
-
-  }
+    changeScreenHeight(){
+      return document.documentElement.clientHeight<800?document.documentElement.clientHeight*0.9+'px':document.documentElement.clientHeight*0.94+'px'
+    },
+    changeHeaderHeight(){
+      return document.documentElement.clientHeight<800?document.documentElement.clientHeight*0.1+'px':document.documentElement.clientHeight*0.06+'px'
+    }
+  },
 }
 
 </script>
