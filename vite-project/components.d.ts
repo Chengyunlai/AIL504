@@ -5,10 +5,17 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    LogoSvg: typeof import('./src/components/LogoSvg.vue')['default']
+    Footer: typeof import('./src/components/normal/Footer.vue')['default']
+    Header: typeof import('./src/components/normal/Header.vue')['default']
+    LogoSvg: typeof import('./src/components/naiveWelcomeLayout/LogoSvg.vue')['default']
+    NAffix: typeof import('naive-ui')['NAffix']
     NaiveButton: typeof import('./src/components/NaiveButton.vue')['default']
+    NaiveFooter: typeof import('./src/components/normal/NaiveFooter.vue')['default']
+    NaiveHeader: typeof import('./src/components/normal/NaiveHeader.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    NForm: typeof import('naive-ui')['NForm']
+    NFormItem: typeof import('naive-ui')['NFormItem']
     NGi: typeof import('naive-ui')['NGi']
     NGrid: typeof import('naive-ui')['NGrid']
     NImage: typeof import('naive-ui')['NImage']
