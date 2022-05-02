@@ -1,9 +1,11 @@
 <template>
   <n-layout class="font-transparent">
+    <el-affix>
     <n-layout-header :style="headerHeight" bordered>
         <!--页头-->
         <NaiveHeader></NaiveHeader>
     </n-layout-header>
+    </el-affix>
 
 
     <n-layout-content :content-style="screenHeight">

@@ -5,11 +5,8 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Footer: typeof import('./src/components/normal/Footer.vue')['default']
-    Header: typeof import('./src/components/normal/Header.vue')['default']
+    ElAffix: typeof import('element-plus/es')['ElAffix']
     LogoSvg: typeof import('./src/components/naiveWelcomeLayout/LogoSvg.vue')['default']
-    NAffix: typeof import('naive-ui')['NAffix']
-    NaiveButton: typeof import('./src/components/NaiveButton.vue')['default']
     NaiveFooter: typeof import('./src/components/normal/NaiveFooter.vue')['default']
     NaiveHeader: typeof import('./src/components/normal/NaiveHeader.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
@@ -26,6 +23,8 @@ declare module '@vue/runtime-core' {
     NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
     NModal: typeof import('naive-ui')['NModal']
     NSpace: typeof import('naive-ui')['NSpace']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
   }
 }
 
