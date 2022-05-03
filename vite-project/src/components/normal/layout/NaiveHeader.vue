@@ -10,7 +10,7 @@
         <p class="header-font">AIL504</p>
       </n-gi>
       <!--项目-->
-      <n-gi class="flex-right"  span="6">
+      <n-gi class="flex-right"  span="7">
         <!--<p>智慧消防</p>-->
         <n-space justify="space-around" size="large">
           <n-button

@@ -7,7 +7,7 @@ import NaiveLayout from './views/NaiveWelcomeLayout.vue';
 
 <template>
   <n-config-provider :theme="darkTheme">
-    <NaiveLayout></NaiveLayout>
+    <router-view></router-view>
   </n-config-provider>
 </template>
 

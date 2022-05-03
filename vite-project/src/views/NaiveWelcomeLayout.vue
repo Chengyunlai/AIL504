@@ -34,8 +34,8 @@
 <script lang="ts">
 // 组件导入
 import LogoSvg from "../components/naiveWelcomeLayout/LogoSvg.vue";
-import NaiveHeader from "../components/normal/NaiveHeader.vue";
-import NaiveFooter from "../components/normal/NaiveFooter.vue"
+import NaiveHeader from "../components/normal/layout/NaiveHeader.vue";
+import NaiveFooter from "../components/normal/layout/NaiveFooter.vue"
 
 import {ref} from "vue";
 // 图标
