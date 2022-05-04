@@ -1,5 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router/index.js'
+//全局挂载axios
+import axios from 'axios'
+const app = createApp(App)
+app.config.globalProperties.$http = axios
 
-createApp(App).use(router).mount('#app')
+app.use(router).mount('#app')

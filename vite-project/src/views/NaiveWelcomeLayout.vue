@@ -91,6 +91,7 @@ export default {
       return document.documentElement.clientHeight<800?document.documentElement.clientHeight*0.1+'px':document.documentElement.clientHeight*0.06+'px'
     },
     handleValidateClick(){
+      //验证数据是否合法
       console.log(JSON.stringify(this.formValue))
     }
   },

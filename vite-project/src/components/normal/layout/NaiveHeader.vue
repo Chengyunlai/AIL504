@@ -70,7 +70,7 @@
               <n-input v-model:value="signFormValue.email" placeholder="电子邮箱" />
             </n-form-item>
             <n-form-item>
-              <n-button attr-type="button">
+              <n-button disabled attr-type="button">
                 验证
               </n-button>
             </n-form-item>
@@ -109,7 +109,7 @@
               <n-input  type="password" v-model:value="loginFormValue.age" placeholder="输入密码" />
             </n-form-item>
             <n-form-item>
-              <n-button attr-type="button">
+              <n-button disabled attr-type="button">
                 验证
               </n-button>
             </n-form-item>
@@ -117,7 +117,7 @@
 
           <template #footer>
             <n-space>
-              <n-button>提交</n-button>
+              <n-button @click="loginSubmit">提交</n-button>
               <n-button  @click="login = false">取消</n-button>
             </n-space>
           </template>
@@ -169,6 +169,11 @@ export default {
         name:'',
         password:''
       }
+    }
+  },
+  methods:{
+    loginSubmit(){
+      console.log(this.$https)
     }
   }
 
