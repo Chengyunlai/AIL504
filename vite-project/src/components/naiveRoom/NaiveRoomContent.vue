@@ -91,7 +91,7 @@ const menuOptions: MenuOption[] = [
             RouterLink,
             {
               to: {
-                name: 'home',
+                name: 'scheme',
                 params: {
                   lang: 'zh-CN'
                 }

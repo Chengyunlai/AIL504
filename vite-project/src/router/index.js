@@ -10,12 +10,20 @@ const routes = [
         path: '/room',
         name: 'room',
         component:() => import('../views/NaiveRoom.vue'),
-        children:[{
+        children:[
+            {
             path:'project',
             name:'project',
             component:() => import('../views/NaiveProjectPlate.vue')
-        }]
+            },
+            {
+                path:'scheme',
+                name:'scheme',
+                component:() => import('../views/NaiveScheme.vue')
+            }
+        ]
     },
+
 ]
 
 const router = createRouter({
