@@ -28,7 +28,9 @@
 <script lang="ts">
 import NaiveRoomHeader from "../components/naiveRoom/NaiveRoomHeader.vue";
 import NaiveRoomContent from "@/components/naiveRoom/NaiveRoomContent.vue";
-export default {
+import {defineComponent} from "vue"
+
+export default defineComponent({
   name: "NaiveRoom",
   components: {NaiveRoomContent, NaiveRoomHeader},
   data(){
@@ -42,14 +44,14 @@ export default {
     }
   },
   methods:{
-    changeScreenHeight(){
+    changeScreenHeight():String{
       return document.documentElement.clientHeight<800?document.documentElement.clientHeight*0.9+'px':document.documentElement.clientHeight*0.94+'px'
     },
     changeHeaderHeight(){
       return document.documentElement.clientHeight<800?document.documentElement.clientHeight*0.1+'px':document.documentElement.clientHeight*0.06+'px'
     }
   }
-}
+})
 </script>
 
 <style scoped>

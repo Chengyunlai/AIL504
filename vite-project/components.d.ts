@@ -7,7 +7,6 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ElAffix: typeof import('element-plus/es')['ElAffix']
     LogoSvg: typeof import('./src/components/naiveWelcomeLayout/LogoSvg.vue')['default']
-    NaiveContent: typeof import('./src/components/naiveRoom/NaiveContent.vue')['default']
     NaiveEmail: typeof import('./src/components/normal/NaiveEmail.vue')['default']
     NaiveFooter: typeof import('./src/components/normal/layout/NaiveFooter.vue')['default']
     NaiveHeader: typeof import('./src/components/normal/layout/NaiveHeader.vue')['default']
@@ -24,7 +23,6 @@ declare module '@vue/runtime-core' {
     NFormItem: typeof import('naive-ui')['NFormItem']
     NGi: typeof import('naive-ui')['NGi']
     NGrid: typeof import('naive-ui')['NGrid']
-    NH2: typeof import('naive-ui')['NH2']
     NIcon: typeof import('naive-ui')['NIcon']
     NIconWrapper: typeof import('naive-ui')['NIconWrapper']
     NImage: typeof import('naive-ui')['NImage']
