@@ -22,4 +22,8 @@ import NaiveLayout from './views/NaiveWelcomeLayout.vue';
   /*color: #2c3e50;*/
   /*margin-top: 60px;*/
 }
+new{
+  /*master*/
+  background-color: #19b3f5;
+}
 </style>
