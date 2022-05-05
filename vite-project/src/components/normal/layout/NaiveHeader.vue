@@ -58,16 +58,16 @@
               :model="signFormValue"
           >
             <n-form-item label="用户名" path="name">
-              <n-input v-model:value="signFormValue.name" placeholder="输入姓名" />
+              <n-input v-model:value="signFormValue.userName" placeholder="输入姓名" />
             </n-form-item>
             <n-form-item  label="密码" path="password">
-              <n-input type="password" v-model:value="signFormValue.age" placeholder="输入密码" />
+              <n-input type="password" v-model:value="signFormValue.userPassword" placeholder="输入密码" />
             </n-form-item>
             <n-form-item label="电话号码" path="phone">
-              <n-input v-model:value="signFormValue.phone" placeholder="电话号码" />
+              <n-input v-model:value="signFormValue.userPhone" placeholder="电话号码" />
             </n-form-item>
             <n-form-item label="电子邮箱" path="email">
-              <n-input v-model:value="signFormValue.email" placeholder="电子邮箱" />
+              <n-input v-model:value="signFormValue.userEmail" placeholder="电子邮箱" />
             </n-form-item>
             <n-form-item>
               <n-button disabled attr-type="button">
@@ -103,10 +103,10 @@
               :model="loginFormValue"
           >
             <n-form-item label="用户名" path="name">
-              <n-input v-model:value="loginFormValue.name" placeholder="输入用户名" />
+              <n-input v-model:value="loginFormValue.userName" placeholder="输入用户名" />
             </n-form-item>
             <n-form-item label="密码" path="user.age">
-              <n-input  type="password" v-model:value="loginFormValue.age" placeholder="输入密码" />
+              <n-input  type="password" v-model:value="loginFormValue.userPassword" placeholder="输入密码" />
             </n-form-item>
             <n-form-item>
               <n-button disabled attr-type="button">
@@ -135,8 +135,9 @@
 <script lang="ts">
 import {YuqueOutlined} from "@vicons/antd"
 import {LoginOutlined} from "@vicons/antd"
-
-import {ref} from "vue";
+import {getCurrentInstance, ref} from "vue";
+import {userLogin} from "../../../api/login.js"
+import qs from "qs"
 
 export default {
   name: "Header",
@@ -160,20 +161,23 @@ export default {
   data(){
     return{
       signFormValue:{
-        name:'',
-        password:'',
-        phone:'',
-        email:''
+        userName:'',
+        userPassword:'',
+        userPhone:'',
+        userEmail:''
       },
       loginFormValue:{
-        name:'',
-        password:''
+        userName:'',
+        userPassword:''
       }
     }
   },
   methods:{
-    loginSubmit(){
-      console.log(this.$https)
+    async loginSubmit(){
+      console.log(this.loginFormValue)
+      // console.log(JSON.stringify(this.loginFormValue))
+      console.log(qs.stringify(this.loginFormValue))
+      await userLogin(qs.stringify(this.loginFormValue)).then(res=>console.log(res.data))
     }
   }
 
