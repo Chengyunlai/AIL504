@@ -132,7 +132,7 @@
     </n-grid>
 </template>
 
-<script lang="ts">
+<script>
 import {YuqueOutlined} from "@vicons/antd"
 import {LoginOutlined} from "@vicons/antd"
 import {getCurrentInstance, ref} from "vue";

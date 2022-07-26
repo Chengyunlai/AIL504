@@ -1,6 +1,6 @@
 <template>
 <!--下拉菜单-->
-  <n-dropdown trigger="click" :options="options" @select="handleSelect">
+  <n-dropdown trigger="click" :options="options" @select="">
   <!--头像-->
       <n-avatar class="avatar-img" :size="37" src="../../../img/cheng.png"></n-avatar>
   </n-dropdown>
